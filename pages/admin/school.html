@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>辽石化疫情管理系统</title>
+        <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+        <script type="text/javascript">
+            function logoutCheck() {
+                var confirm1 = confirm("确认退出吗？");
+                if (confirm1) {
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <div class="top">
+                <div class="logo">
+                    <h1>辽石化疫情管理系统</h1>
+                </div>
+                <ul class="login_out">
+                    <li><a onclick="return logoutCheck()" id="logout" href="../Login.html"><h3>退出登录</h3></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mian">
+            <div class="main">
+                <div class="left">
+                    <div class="list">
+                        <ul class="yiji">
+                            <li><a href="mangerIndex.html">首页</a></li>
+                            <li><a href="global.html">全球疫情</a></li>
+                            <li><a href="school.html">校内疫情</a></li>
+                            <li><a href="Heath.html">健康信息填报统计</a></li>
+                            <li><a href="trip.html">出行信息填报统计</a></li>
+                            <li><a href="analyse.html">校内疫情分析</a></li>
+                            <li><a href="select.html">疫情查询</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_title">
+                        校园疫情状况
+                    </div>
+                    <div class="right_top">
+                        <span style="color: red">累计确诊:100人，&nbsp;</span>
+                        <span style="color: green">累计治愈:10人，&nbsp;</span>
+                        <span style="color: chocolate">累计死亡:8人&nbsp;</span>
+                    </div>
+                    <table width="915" border="0" class="stripe" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th width="180">学院</th>
+                            <th width="130">专业</th>
+                            <th width="200">确诊人数</th>
+                            <th width="170">疑似人数</th>
+                            <th width="240">治愈人数</th>
+                        </tr>
+                        <tr>
+                            <td width="180">计通院</td>
+                            <td width="130">软件工程</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">计通院</td>
+                            <td width="130">通信工程</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">计通院</td>
+                            <td width="130">数媒</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">石化院</td>
+                            <td width="130">石油工程</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">信控</td>
+                            <td width="130">信息控制工程</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">艺术设计学院</td>
+                            <td width="130">动画</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">经管院</td>
+                            <td width="130">营销</td>
+                            <td width="200">0</td>
+                            <td width="170">0</td>
+                            <td width="240">0</td>
+                        </tr>
+                        <tr>
+                            <td width="180">...</td>
+                            <td width="130">...</td>
+                            <td width="200">...</td>
+                            <td width="170">...</td>
+                            <td width="240">...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+        <script src="../js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="login">
+            <div class="content clearfix">
+                <div class="content-left">
+                    <div class="logo">
+                        <img src="../images/logo.png" alt=""/>
+                        <p>辽石化疫情填报管理系统</p>
+                    </div>
+                </div>
+                <div class="shu"></div>
+                <div class="content-right">
+                    <div class="login-form">
+                        <h2>用户登录/LOGIN</h2>
+                        <div class="identifire">
+                            <span>身　份：</span>
+                            <select>
+                                <option value="填报人员" selected="selected">填报人员</option>
+                                <option value="管理人员">管理人员</option>
+                            </select>
+                        </div>
+                        <div class="account clearfix">
+                            <span>账　号：</span>
+                            <input type="text" id="username" name="username"/>
+                        </div>
+                        <div class="password clearfix">
+                            <span>密　码：</span>
+                            <input type="password" id="password" name="password"/>
+                        </div>
+                        <div class="code clearfix">
+                            <span>验证码：</span>
+                            <input type="text" name="code" id="code"/>
+                            <em>zdk666</em>
+                        </div>
+                        <div class="btn">
+                            <span id="login"><a>登录</a></span>
+                            <span class="forget"><a href="password.html">忘记密码</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#login').on('click', 'a', function () {
+                    var username = $("#username").val();
+                    var password = $("#password").val();
+                    var code = $("#code").val();
+                    if (!(username == "admin" && password == "123456")) {
+                        alert("用户名或者密码错误！！");
+                        return;
+                    }
+                    if (code != 'zdk666') {
+                        alert("验证码错误！！");
+                        return;
+                    }
+                    var aVal = $('.identifire select');
+                    if (aVal.val() == '填报人员') {
+                        $(this).attr('href', 'fillForm.html');
+                    } else if (aVal.val() == '管理人员') {
+                        $(this).attr('href', 'admin/mangerIndex.html');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

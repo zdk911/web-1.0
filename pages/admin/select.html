@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>辽石化疫情管理系统</title>
+        <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+        <script type="text/javascript">
+            function logoutCheck() {
+                var confirm1 = confirm("确认退出吗？");
+                if (confirm1) {
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <div class="top">
+                <div class="logo">
+                    <h1>辽石化疫情管理系统</h1>
+                </div>
+                <ul class="login_out">
+                    <li><a onclick="return logoutCheck()" id="logout" href="../Login.html"><h3>退出登录</h3></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mian">
+            <div class="main">
+                <div class="left">
+                    <div class="list">
+                        <ul class="yiji">
+                            <li><a href="mangerIndex.html">首页</a></li>
+                            <li><a href="global.html">全球疫情</a></li>
+                            <li><a href="school.html">校内疫情</a></li>
+                            <li><a href="Heath.html">健康信息填报统计</a></li>
+                            <li><a href="trip.html">出行信息填报统计</a></li>
+                            <li><a href="analyse.html">校内疫情分析</a></li>
+                            <li><a href="select.html">疫情查询</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_title">
+                        疫情信息查询
+                    </div>
+                    <div class="right_top">
+                        <span style="color: red">累计确诊:100人，&nbsp</span>
+                        <span style="color: green">累计治愈:100人，&nbsp</span>
+                        <span style="color: chocolate">累计死亡:0人</span>
+                    </div>
+                    <form name="myform" method="post">
+                        查询项目：
+                        <select name="item">
+                            <option>查询个人填报记录</option>
+                            <option>查询个人出行填报记录</option>
+                            <option>查询某个学院疫情状况</option>
+                        </select>&nbsp;&nbsp;&nbsp;
+                        查询条件：
+                        <select name="condition">
+                            <option>按照学生姓名</option>
+                            <option>按照学生学号</option>
+                            <option>按照学院名字</option>
+                        </select>
+                        请输入条件参数：<input type="text" id="conditionAtr">
+                        <input onclick="doSubmit()" type="button" value="查询"/>
+                    </form>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <div>
+                        <h1 style="color: red">查询结果如下:</h1>
+                    </div>
+                    <table id="table" width="915" border="0" class="stripe" cellpadding="0" cellspacing="0">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        //表单提交
+        function doSubmit() {
+            // 获取查询项目
+            var item = document.myform.item;
+            var itemText = item.options[item.selectedIndex].text;
+            // 获取查询条件
+            var condition = document.myform.condition;
+            var conditionText = condition.options[condition.selectedIndex].text;
+            // 获取查询条件参数
+            var attr = document.getElementById("conditionAtr").value;
+            if (itemText == "查询个人填报记录") {
+                if (conditionText == "按照学生姓名") {
+                    //
+                    var tr_h ="<tr>\n" +
+                        "                            <th width=\"180\">时间</th>\n" +
+                        "                            <th width=\"130\">姓名</th>\n" +
+                        "                            <th width=\"200\">体温</th>\n" +
+                        "                            <th width=\"170\">是否确诊</th>\n" +
+                        "                            <th width=\"240\">是否疑似</th>\n" +
+                        "                        </tr>";
+                    var tr_d ="<tr>\n" +
+                        "                            <td width=\"180\">\n" +
+                        "                                <div class=\"check_b\"></div>\n" +
+                        "                                <div class=\"check\"></div>\n" +
+                        "                                2021-06-9 13:20:21\n" +
+                        "                            </td>\n" +
+                        "                            <td width=\"130\">"+attr+"</td>\n" +
+                        "                            <td width=\"200\">36.5</td>\n" +
+                        "                            <td width=\"170\">否</td>\n" +
+                        "                            <td width=\"240\">否</td>\n" +
+                        "                        </tr>";
+                } else if (conditionText == "按照学生学号") {
+                    //
+                    var tr_h ="<tr>\n" +
+                        "                            <th width=\"180\">时间</th>\n" +
+                        "                            <th width=\"130\">"+"学号"+"</th>\n" +
+                        "                            <th width=\"200\">体温</th>\n" +
+                        "                            <th width=\"170\">是否确诊</th>\n" +
+                        "                            <th width=\"240\">是否疑似</th>\n" +
+                        "                        </tr>";
+                    var tr_d ="<tr>\n" +
+                        "                            <td width=\"180\">\n" +
+                        "                                <div class=\"check_b\"></div>\n" +
+                        "                                <div class=\"check\"></div>\n" +
+                        "                                2021-06-9 13:20:21\n" +
+                        "                            </td>\n" +
+                        "                            <td width=\"130\">"+attr+"</td>\n" +
+                        "                            <td width=\"200\">36.5</td>\n" +
+                        "                            <td width=\"170\">否</td>\n" +
+                        "                            <td width=\"240\">否</td>\n" +
+                        "                        </tr>";
+                }
+            } else if (itemText == "查询个人出行填报记录") {
+                if (conditionText == "按照学生姓名") {
+                    //
+                    var tr_h =" <tr>\n" +
+                        "                            <th width=\"180\">时间</th>\n" +
+                        "                            <th width=\"130\" style=\"color: blue\">姓名</th>\n" +
+                        "                            <th width=\"200\" style=\"color: crimson\">出发地</th>\n" +
+                        "                            <th width=\"170\" style=\"color: coral\">目的地</th>\n" +
+                        "                            <th width=\"240\" style=\"color: red\">出行方式</th>\n" +
+                        "                        </tr>";
+                    var tr_d ="<tr>\n" +
+                        "                            <td width=\"180\">\n" +
+                        "                                <div class=\"check_b\"></div>\n" +
+                        "                                <div class=\"check\"></div>\n" +
+                        "                                2021-06-9 13:20:21\n" +
+                        "                            </td>\n" +
+                        "                            <td width=\"130\" style=\"color: blue\">"+attr+"</td>\n" +
+                        "                            <td width=\"200\" style=\"color: crimson\">八舍</td>\n" +
+                        "                            <td width=\"170\" style=\"color: coral\">三舍</td>\n" +
+                        "                            <td width=\"240\" style=\"color: red\">步行</td>\n" +
+                        "                        </tr>";
+                } else if (conditionText == "按照学生学号") {
+                    //
+                    var tr_h =" <tr>\n" +
+                        "                            <th width=\"180\">时间</th>\n" +
+                        "                            <th width=\"130\" style=\"color: blue\">"+"学号"+"</th>\n" +
+                        "                            <th width=\"200\" style=\"color: crimson\">出发地</th>\n" +
+                        "                            <th width=\"170\" style=\"color: coral\">目的地</th>\n" +
+                        "                            <th width=\"240\" style=\"color: red\">出行方式</th>\n" +
+                        "                        </tr>";
+                    var tr_d ="<tr>\n" +
+                        "                            <td width=\"180\">\n" +
+                        "                                <div class=\"check_b\"></div>\n" +
+                        "                                <div class=\"check\"></div>\n" +
+                        "                                2021-06-9 13:20:21\n" +
+                        "                            </td>\n" +
+                        "                            <td width=\"130\" style=\"color: blue\">"+attr+"</td>\n" +
+                        "                            <td width=\"200\" style=\"color: crimson\">八舍</td>\n" +
+                        "                            <td width=\"170\" style=\"color: coral\">三舍</td>\n" +
+                        "                            <td width=\"240\" style=\"color: red\">步行</td>\n" +
+                        "                        </tr>";
+                }
+            } else {
+                //
+                var tr_h = "<tr>\n" +
+                    "                            <th width=\"180\">日期</th>\n" +
+                    "                            <th width=\"130\" style=\"color: orange\">学院</th>\n" +
+                    "                            <th width=\"200\" style=\"color: red\">新增确诊</th>\n" +
+                    "                            <th width=\"200\" style=\"color: red\">现有确诊</th>\n" +
+                    "                            <th width=\"170\" style=\"color: darkmagenta\">累计确诊</th>\n" +
+                    "                            <th width=\"240\" style=\"color: green\">累计治愈</th>\n" +
+                    "                        </tr>";
+                var tr_d = "<tr>\n" +
+                    "                            <td width=\"180\">\n" +
+                    "                                <div class=\"check_b\"></div>\n" +
+                    "                                <div class=\"check\"></div>\n" +
+                    "                                2021-06-9 13:20:21\n" +
+                    "                            </td>\n" +
+                    "                            <td width=\"130\" style=\"color: orange\">" + attr + "</td>\n" +
+                    "                            <td width=\"200\" style=\"color: red\">1</td>\n" +
+                    "                            <td width=\"200\" style=\"color: red\">2</td>\n" +
+                    "                            <td width=\"170\" style=\"color: darkmagenta\">3</td>\n" +
+                    "                            <td width=\"240\" style=\"color: green\">3</td>\n" +
+                    "                        </tr>";
+            }
+            console.log(attr)
+            var html = tr_h + tr_d;
+            console.log(html)
+            var table = document.getElementById("table");
+            table.innerHTML = html;
+        }
+    </script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>填报信息页面</title>
+    </head>
+    <style>
+        .bigbox {
+            position: relative;
+            width: 700px;
+            height: 470px;
+            margin: 50px auto;
+            border: 1px solid black;
+            background-color: #F0F7FF
+
+        }
+
+        .box {
+            width: 700px;
+            height: 450px;
+            margin-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        a {
+            font-size: 2px;
+            color: #B0B8BD;
+        }
+    </style>
+    <body>
+        <div class="bigbox">
+            <div class="box">
+                <h1>个人信息登记表</h1>
+                <form action="Login.html" name="myform" onsubmit="return doSubmit()" method="post">
+                    <div>
+                        <span>学 院：</span>
+                        <select>
+                            <option value="计算院" selected="selected">计算院</option>
+                            <option value="石化院">石化院</option>
+                            <option value="经管院">经管院</option>
+                            <option value="艺术院">艺术院</option>
+                            <option value="信控院">信控院</option>
+                            <option value="体育院">体育院</option>
+                        </select>
+                    </div>
+                    <br/>
+                    <div>
+                        <span>专 业 ：</span>
+                        <select>
+                            <option value="软件工程" selected="selected">软件工程</option>
+                            <option value="通信工程">通信工程</option>
+                            <option value="计算机与科学技术">计算机与科学技术</option>
+                            <option value="石油化工">石油化工</option>
+                            <option value="羽毛球">羽毛球</option>
+                            <option value="炼油">炼油</option>
+                            <option value="长跑">长跑</option>
+                            <option value="信息控制">信息控制</option>
+                            <option value="数字媒体">数字媒体</option>
+                        </select>
+                    </div>
+                    <br/>
+
+                    <div>
+                        <span>住 处：</span>
+                        <select>
+                            <option value="1舍" selected="selected">1舍</option>
+                            <option value="2舍">2舍</option>
+                            <option value="3舍">3舍</option>
+                            <option value="4舍">4舍</option>
+                            <option value="5舍">5舍</option>
+                            <option value="6舍">6舍</option>
+                            <option value="7舍">7舍</option>
+                            <option value="8舍">8舍</option>
+                            <option value="9舍">9舍</option>
+                        </select>
+                    </div>
+                    <br/>
+                    <div>
+                        <span>班 级 ：</span>
+                        <select>
+                            <option value="19-01" selected="selected">19-01</option>
+                            <option value="19-02">19-02</option>
+                            <option value="20-01">20-01</option>
+                            <option value="20-03">20-03</option>
+                            <option value="18-01">18-01</option>
+                            <option value="18-02">18-02</option>
+                        </select>
+                    </div>
+                    <br/>
+                    学 号：<input type="text" name="stuNumber" onblur="checkstuNumber()"/> <a>11位学号</a><br><br>
+                    <div>
+                        <span>体温 ：</span>
+                        <select>
+                            <option value="36.0以下" selected="selected">36.0以下</option>
+                            <option value="36.0~36.5">36.0~36.5</option>
+                            <option value="36.5~37.0">36.5~37.0</option>
+                            <option value="37.0~37.5">37.0~37.5</option>
+                            <option value="37.5~发烧">37.5~发烧</option>
+                        </select>
+                    </div>
+                    <br/>
+                    填报时间：<input type="text" name="date" onblur="checkTime()"/> <a>格式为eg： 2014-01-01
+                    12:00:00 </a><br><br>
+                    <br/>
+                    <br/>
+                    <input type="submit" value="提交"/> 　　
+                    <input type="reset" value="重置"/>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        //验证学号函数
+        function checkstuNumber() {
+            //获取信息
+            var uyearsold = document.myform.stuNumber.value;
+            if (uyearsold.match(/^\d{6,8}$/) == null) {
+                alert("请输入正确的学号！");
+                return false;
+            }
+            return true;
+        }
+
+        //验证时间函数
+        function checkTime() {
+            //获取信息
+            var email = document.myform.date.value;
+            //执行验证
+            if (email.match(/^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])\s+(20|21|22|23|[0-1]\d):[0-5]\d:[0-5]\d$/) == null) {
+                alert("请输入正确的时间格式信息！ eg：2014-01-01 12:00:00 ");
+                return false;
+            }
+            return true;
+        }
+
+        //表单提交
+        function doSubmit() {
+            if (checkstuNumber() && checkTime()) {
+                alert("填报成功");
+            }
+            return checkstuNumber() && checkTime();
+        }
+    </script>
+</html>

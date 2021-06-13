@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>辽石化疫情管理系统</title>
+        <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+        <script type="text/javascript">
+            function logoutCheck() {
+                var confirm1 = confirm("确认退出吗？");
+                if (confirm1) {
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <div class="top">
+                <div class="logo">
+                    <h1>辽石化疫情管理系统</h1>
+                </div>
+                <ul class="login_out">
+                    <li><a onclick="return logoutCheck()" id="logout" href="../Login.html"><h3>退出登录</h3></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mian">
+            <div class="main">
+                <div class="left">
+                    <div class="list">
+                        <ul class="yiji">
+                            <li><a href="mangerIndex.html">首页</a></li>
+                            <li><a href="global.html">全球疫情</a></li>
+                            <li><a href="school.html">校内疫情</a></li>
+                            <li><a href="Heath.html">健康信息填报统计</a></li>
+                            <li><a href="trip.html">出行信息填报统计</a></li>
+                            <li><a href="analyse.html">校内疫情分析</a></li>
+                            <li><a href="select.html">疫情查询</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_title">
+                        校内人员健康信息填报统计
+                    </div>
+                    <div class="right_top">
+                        <span style="color: red">已填报:333，&nbsp;</span>
+                        <span style="color: green">未填报:100人 &nbsp;</span>
+                    </div>
+                    <table width="915" border="0" class="stripe" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th width="180">时间</th>
+                            <th width="130">姓名</th>
+                            <th width="200">体温</th>
+                            <th width="170">是否确诊</th>
+                            <th width="240">是否疑似</th>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">臧东坤</td>
+                            <td width="200">36.5</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">柴志华</td>
+                            <td width="200">36.6</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">徐保家</td>
+                            <td width="200">36.0</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">吴秀安</td>
+                            <td width="200">37.0</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">刘新飞</td>
+                            <td width="200">36.5</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">杨东伟</td>
+                            <td width="200">36.5</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">
+                                <div class="check_b"></div>
+                                <div class="check"></div>
+                                2021-06-9 13:20:21
+                            </td>
+                            <td width="130">毛腾凯</td>
+                            <td width="200">36.5</td>
+                            <td width="170">否</td>
+                            <td width="240">否</td>
+                        </tr>
+                        <tr>
+                            <td width="180">...</td>
+                            <td width="130">...</td>
+                            <td width="200">...</td>
+                            <td width="170">...</td>
+                            <td width="240">...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
